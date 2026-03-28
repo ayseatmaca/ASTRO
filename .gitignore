@@ -1,0 +1,19 @@
+# Credentials
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Data
+data/tle_cache/
+data/processed/
+
+# Models
+models/*.pt
+models/*.onnx
+
+# IDE
+.vscode/
+.idea/

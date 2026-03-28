@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>uk.yetanother</groupId>
+	<artifactId>TwoLineElementUtilities</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+
+	<name>TwoLineElementUtilities</name>
+	<description>Provides an easy way to parse Two Line Element (TLE) files or strings</description>
+	<url>http://www.yetanother.uk</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>ashleycbaker</id>
+			<name>Ashley Baker</name>
+			<email>ashley@yetanother.uk</email>
+			<organization>YetAnother</organization>
+			<organizationUrl>https://yetanother.uk</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://github.com/yetanother-uk/TwoLineElementUtilities.git</url>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>4.1.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>6.5.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<failBuildOnAnyVulnerability>true</failBuildOnAnyVulnerability>
+							<failOnError>true</failOnError>
+							<skipTestScope>false</skipTestScope>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>${basedir}</directory>
+				<includes>
+					<include>LICENSE.md</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>

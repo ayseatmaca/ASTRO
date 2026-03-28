@@ -1,0 +1,11 @@
+*.egg-info
+*.pyc
+/.coverage
+/MANIFEST
+/build/
+/ci/legacy/
+/cpp/
+/dist/
+/htmlcov/
+/t/
+/tmp*.py
